@@ -1,0 +1,11 @@
+/home/mintdev/Documentos/Estudos/Estudos/core/helloWorld/bin/Debug/netcoreapp3.0/helloWorld
+/home/mintdev/Documentos/Estudos/Estudos/core/helloWorld/bin/Debug/netcoreapp3.0/helloWorld.deps.json
+/home/mintdev/Documentos/Estudos/Estudos/core/helloWorld/bin/Debug/netcoreapp3.0/helloWorld.runtimeconfig.json
+/home/mintdev/Documentos/Estudos/Estudos/core/helloWorld/bin/Debug/netcoreapp3.0/helloWorld.runtimeconfig.dev.json
+/home/mintdev/Documentos/Estudos/Estudos/core/helloWorld/bin/Debug/netcoreapp3.0/helloWorld.dll
+/home/mintdev/Documentos/Estudos/Estudos/core/helloWorld/bin/Debug/netcoreapp3.0/helloWorld.pdb
+/home/mintdev/Documentos/Estudos/Estudos/core/helloWorld/obj/Debug/netcoreapp3.0/helloWorld.csprojAssemblyReference.cache
+/home/mintdev/Documentos/Estudos/Estudos/core/helloWorld/obj/Debug/netcoreapp3.0/helloWorld.AssemblyInfoInputs.cache
+/home/mintdev/Documentos/Estudos/Estudos/core/helloWorld/obj/Debug/netcoreapp3.0/helloWorld.AssemblyInfo.cs
+/home/mintdev/Documentos/Estudos/Estudos/core/helloWorld/obj/Debug/netcoreapp3.0/helloWorld.dll
+/home/mintdev/Documentos/Estudos/Estudos/core/helloWorld/obj/Debug/netcoreapp3.0/helloWorld.pdb

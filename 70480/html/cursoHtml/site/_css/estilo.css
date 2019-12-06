@@ -154,3 +154,26 @@ https://fonts.google.com/
     figure.foto-legenda:hover figcaption{
         opacity: 1;
     }
+
+    section#corpo{
+        display: block;
+        width: 500px;
+        float: left;
+        border-right: 1px solid #606060;
+        padding-right: 15px;
+    }
+
+    aside#lateral{
+        display: block;
+        width: 350px;
+        float:right;
+    }
+
+    footer#rodape{
+        clear: both;
+        border-top: 1px solid #606060;
+    }
+
+    footer#rodape p{
+        text-align: center; 
+    }

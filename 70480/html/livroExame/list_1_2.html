@@ -23,9 +23,30 @@
 			//var afterRemove = document.getElementById("innerDiv");
 			//alert(afterRemove);
 			
-			element = document.createElement("article");
-			element.innerText = "My new <article> element";
-			document.getElementById("outerDiv").appendChild(element);
+			//element = document.createElement("article");
+			//element.innerText = "My new <article> element";
+			//document.getElementById("outerDiv").appendChild(element);
+
+            //element = document.getElementById("outerDiv").insertBefore(
+            //                                    document.createElement("article"),
+            //                                    document.getElementById("innerDiv"));
+            //element.innerText = "My new article!";
+
+            //element = document.getElementById("innerDiv").removeChild(document.getElementById("P1"));
+            element = document.getElementById("innerDiv");
+            // - -> não funfa--> element.removeNode(true);
+            
+            var innerDiv = document.getElementById("innerDiv");
+            var newDiv = document.createElement("div");
+            for(var i = 0; i < innerDiv.childNodes.length; i++){
+                var anchor = newDiv.appendChild(document.createElement("a"));
+                anchor.setAttribute("href", "http://www.googel.com");
+                anchor.text = innerDiv.childNodes[i].textContent;
+                newDiv.appendChild(document.createElement("br"));
+            } 
+            //document.getElementById("outerDiv").replaceChild(newDiv, innerDiv);
+            innerDiv.replaceNode(newDiv);
+            
 		}
 	</script>
 </head>

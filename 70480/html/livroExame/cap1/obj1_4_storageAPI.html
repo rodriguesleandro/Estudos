@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+	section{
+		margin-top:15px;
+	}
+</style>
+<script>
+	window.onload = function(){
+		LoadFromStorage();
+		
+		document.getElementById("btnAdd").onclick = function (){
+			var key = document.getElementById("toStorageKey").value;
+			var val = document.getElementById("toStorageValue").value;
+			
+			localStorage.setItem(key, val);
+			LoadFromStorage();		
+		}
+		
+		document.getElementById("btnRemove").onclick = function(){
+			var key = document.getElementById("toStorageKey").value;
+			localStorage.removeItem(key);
+			LoadFromStorage();
+		}
+		
+		document.getElementById("btnClear").onclick = function(){
+			localStorage.clear();
+			LoadFromStorage();
+		}
+	}	
+		function LoadFromStorage(){
+			var storageDiv = document.getElementById("storage");
+			var tbl = document.createElement("table");
+			tbl.id = "storageTable";
+			
+			if(localStorage.length > 0){
+				for (var i = 0; i < localStorage.length; i++){
+					var row = document.createElement("tr");
+					var key = document.createElement("td");
+					var val = document.createElement("td");
+					
+					key.innerText = localStorage.key(i);
+					val.innerText = localStorage.getItem(key.innerText);
+					
+					row.appendChild(key);
+					row.appendChild(val);
+					tbl.appendChild(row);
+				}
+			}
+			else{
+				var row = document.createElement("tr");
+				var col = document.createElement("td");
+				col.innerText = "No data in local storage";
+				row.appendChild(col);
+				tbl.appendChild(row);
+			}
+			
+			if(storageDiv.childNodes.length > 1){
+				var possuiTabela = false;
+				for(var i = 0; i < storageDiv.childNodes.length; i++){
+					if(storageDiv.childNodes[i].id == "storageTable"){
+						storageDiv.replaceChild(tbl, storageDiv.childNodes[i]);
+						possuiTabela == true;
+						break;
+					}
+				}
+				if(!possuiTabela){
+					storageDiv.appendChild(tbl);
+				}
+				
+			}
+		}
+	
+</script>
+</head>
+<body>
+	<section>
+		Key:
+		<input type="text" id="toStorageKey"/>
+		Value:
+		<input type="text" id="toStorageValue"/>
+	</section>
+	<section>
+		<button type="button" id="btnAdd">Add To Storage</button>
+		<button type="button" id="btnRemove">Remove from Storage</button>
+		<button type="button" id="btnClear">Clear Storage</button>
+	</section>
+	<div id="storage">
+		<p>Current Storage Contents</p>
+		
+	</div>
+<body>
+</html>

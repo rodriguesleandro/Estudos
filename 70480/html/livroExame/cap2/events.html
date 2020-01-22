@@ -1,0 +1,186 @@
+<DOCTYPE HTML>
+<meta charset = "utf-8"/>
+<head>
+<title>Eventos</title>
+<style>
+#outer {
+width: 200px;
+height: 200px;
+background-color: red;
+}
+#middle {
+width: 50%;
+height: 50%;
+position: relative;
+top: 25%;
+left: 25%;
+background-color: green;
+}
+#inner {
+width: 50%;
+height: 50%;
+position: relative;
+top: 25%;
+left: 25%;
+background-color: blue;
+}
+/*-----------------------------------------------------------*/
+.dropped {
+width: 50%;
+height: 50%;
+position: relative;
+top: 25%;
+left: 25%;
+background-color:black;
+}
+.over {
+transform: scale(1.1);
+}
+.bucket {
+width: 100px;
+height: 100px;
+margin: 10px 10px 10px 10px;
+/*position:absolute;*/
+border: 1px solid;
+}
+.chip {
+width:20px;
+height:20px;
+position:absolute;
+background-color:yellow;
+}
+div:first-of-type {
+background-color: red;
+}
+div:nth-of-type(2) {
+background-color: green;
+left:25%;
+}
+div:nth-of-type(3) {
+background-color: blue;
+left:50%;
+}
+#chip {
+background-color: black;
+width:50px;
+height:50px;
+}
+.begin {
+position:absolute;
+left: 150px;
+top: 150px;
+}
+</style>
+<script>
+window.onload = function () {
+	/*document.getElementById("outer").addEventListener("click", outerDivClick, false);
+	document.getElementById("middle").addEventListener("click", middleDivClick, false);
+	document.getElementById("inner").addEventListener("click", innerDivClick, false);
+	document.getElementById("clearButton").addEventListener("click", clearList);
+	//--
+	document.getElementById("aRange").addEventListener("change", rangeChangeEvent);
+	//--
+	//document.getElementById("firstNameText").focus();
+	document.getElementById("firstNameText").addEventListener("blur", 
+					function () {
+								if (this.value.length < 5) {
+								document.getElementById("ruleViolation").innerText =
+														'First Name is required to be 5 letters.';
+								document.getElementById("ruleViolation").style.color = 'red';
+								this.focus();
+					}
+	});
+	//--
+	document.onkeydown = function () {
+			if (window.event.ctrlKey && String.fromCharCode(window.event.keyCode) == 'F'){
+				document.getElementById("corpo").style.background = "#dddddd";
+			}
+			if (window.event.ctrlKey && String.fromCharCode(window.event.keyCode) == 'Y'){
+				document.getElementById("corpo").style.background = "yellow";
+			}
+			//if (window.event.shiftKey && window.event.ctrlKey && String.fromCharCode(window.event.keyCode) == 'W'){
+			//	document.getElementById("corpo").style.background = "white";
+			//}
+			}
+	//--
+	*/
+	var chip = document.getElementById("chip");
+	chip.addEventListener("dragstart", function ()
+	{ window.event.dataTransfer.setData("Text", this.id); });
+	
+	var b1 = document.getElementById("bucket1");
+	b1.addEventListener("dragenter", function () {
+													b1.classList.add("over");
+													window.event.returnValue = false;
+												});
+	b1.addEventListener("dragleave", function () {
+													b1.classList.remove("over");
+													});
+	b1.addEventListener("dragover", function () {
+													window.event.returnValue = false;
+													});
+	b1.addEventListener("drop", function () {
+											window.event.returnValue = false;
+											var data = event.dataTransfer.getData("Text");
+											var d = document.getElementById(data);
+											d.classList.remove("begin");
+											d.classList.add("dropped");
+											this.appendChild(d);
+											});
+
+}
+function outerDivClick() {
+	appendText("outer Div Clicked");
+}
+function middleDivClick() {
+	appendText("middle Div Clicked");
+}
+function innerDivClick() {
+	appendText("inner Div Clicked");
+}
+function appendText(s) {
+	var li = document.createElement("li");
+	li.innerText = s;
+	document.getElementById("eventOrder").appendChild(li);
+}
+function clearList() {
+	var ol = document.createElement("ol");
+	ol.id = "eventOrder";
+	document.getElementById("lista").replaceChild(ol,document.
+	getElementById("eventOrder"));
+}
+////////////////////////////////////////////////////////////////////////////
+function rangeChangeEvent() {
+	document.getElementById("rangeValue").innerText = this.value;
+}
+////////////////////////////////////////////////////////////////////////////
+
+</script>
+
+</head>
+<html>
+<body id="corpo">
+<!--
+<div id="outer">
+	<div id="middle" >
+		<div id="inner">
+		</div>
+	</div>
+</div>
+<div id="lista">
+	<ol id="eventOrder"> </ol>
+</div>
+<button type="button" id="clearButton">Clear</button>
+<hr> <!-----------------------------------------------------------------------------------------------> <!--
+<input id="aRange" type="range" max="200" min="0" value="0"/>
+<div id="rangeValue"></div>
+<hr> <!-----------------------------------------------------------------------------------------------> <!--
+<input type="text" id="firstNameText" />
+<div id="ruleViolation"></div>
+<hr> <!----------------------------------------------------------------------------------------------->
+<div id="bucket1" class="bucket"></div>
+<div id="bucket2" class="bucket"></div>
+<div id="bucket3" class="bucket"></div>
+<div id="chip" draggable="true" class="chip"></div>
+</body>
+</html>

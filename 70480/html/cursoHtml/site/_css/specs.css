@@ -9,9 +9,13 @@ iframe#frame-spec{
     width:380px;
     height: 280px;
     border: none;
+    /* se o conetudo for maior hidden só renderiza o que cabe, se não põe scroll
+        não funcionou com o iframe  */
     overflow: hidden;
 }
 
+/* Não standart e suportado por porra nnhuma
 iframe#frame-spec::-webkit-scrollbar{
     display: none;
 }
+*/

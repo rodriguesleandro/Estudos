@@ -1,0 +1,41 @@
+/*
+$(seletor).ação();
+*/
+/*
+$(document).ready(
+	function(){
+		$('button').click(
+			function(){
+				$('h1').hide();
+			}
+		);
+	}
+);
+*/
+/*
+$(function(){
+		$('button').click(
+			function(){
+				$('h1').hide();
+			}
+		);
+	}
+);
+*/
+$(function(){
+		$('#btnEsconder').click(
+			function(){
+				$('h1').hide();
+				$('h1').delay(3000);
+				$('h1').fadeIn('slow');
+				$('h1').fadeOut(5000);
+			}
+		);
+		
+		$('#btnVermelhar').click(
+			function(){
+				$('h1').css("color", "red");
+			}
+		);
+	}
+);

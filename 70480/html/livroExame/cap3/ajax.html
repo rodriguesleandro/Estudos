@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<meta charset="utf-8"/>
+<html>
+<head>
+<script src="jquery-3.4.1.min.js"></script>
+<script>
+$("document").ready(function () {
+	try{
+		$("#btnGetXMLData").click(function () {
+			var xReq = new XMLHttpRequest();
+			xReq.open("GET", "person.json", false);
+			xReq.send(null);
+			$("#results").text(xReq.response);
+		});
+	}
+	catch(e){
+		alert(e.message);
+	}
+});
+</script>
+</head>
+<body>
+<button id="btnGetXMLData">Me dê um apertão</button>
+<div id="results"></div>
+<body>
+</html>

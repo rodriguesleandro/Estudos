@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<script>
+function minhaBiblioteca(){
+	let constante = 10;
+	function auxiliar(valor){
+		return constante + valor;
+	}
+	
+	return{
+		add5(){
+			return auxiliar(5);
+		},		
+		add7(){
+			return auxiliar(7);
+		}
+	}
+}
+
+var biblioteca = minhaBiblioteca();
+
+console.log(biblioteca);
+console.log(biblioteca.add5());
+console.log(biblioteca.add7());
+
+console.log(biblioteca.constante);
+</script>
+<body>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<meta charset="UTF-8"/>
+<script>
+window.onload = function (){
+	var geo = window.navigator.geolocation;
+	var geoOptions = {enableHighAccuracy: true, timeout: 45000, maximumAge: 3000};	
+	//geo.getCurrentPosition(sucesso, fudeu,geoOptions);
+	var watcher = geo.watchPosition(sucesso, fudeu, geoOptions);
+	
+function sucesso(position){
+	var d = document.getElementsByTagName("div");
+	d[0].innerText = position.coords.latitude + ", " + position.coords.longitude
+	console.log(position);
+}		
+
+function fudeu(err){
+	alert("oi");
+}
+}
+
+</script>
+
+</head>
+
+
+<body>
+<div>
+
+</div>
+</body>
+</html>

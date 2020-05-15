@@ -1,4 +1,4 @@
-//using Microsoft.EntityFrameWorkCore;
+//using Microsoft.EntityFrameworkCore;
 
 namespace ProAgil.WebAPI.Data
 {

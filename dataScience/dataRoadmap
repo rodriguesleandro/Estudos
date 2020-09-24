@@ -1,0 +1,121 @@
+O que eu faria, se tivesse que começar data science hoje
+<https://www.youtube.com/watch?v=VlYDWOfiFuc>
+
+1 mês
+Python/R
+    dados ->Fazer perguntas
+        house rocket
+            Quantas casas tem 1 quarto?
+            Quantas casas tem mais de 1 quarto?
+            Quantas casas estam em boas ou más condiçeõs?
+            Quantos quartos em média, as casas possuem?
+            Qual o preço médio?
+            Qual o desvio padrao do preço?
+            Existem casas com preços outsider?
+            Quais são os 1Q e 3Q dos preços
+
+Responder
+    Manipulação
+        Pandas
+            Selecionar colunas
+            filtrar linhas
+            agregacao
+            funcoes apply lambda
+            união(merge, contat)
+
+    Anláise de dados
+        Bibliotecas seaborn e matplotlib
+            graficos(barras/linhas/empilhado/tendencia/sobrepostos/vários grfáicos na mesma tela)
+            correlações (duas ou mais variáveis)(testes estatisticos de correlacoes númerico/categoŕrico)
+            validação de hipóteses
+
+================= CURSOS GRATUITOS =================
+https://anandology.com/python-practic...
+https://www.youtube.com/watch?v=vmEHC...
+
+1 mês
+Machine Learning
+Modelos
+    o que é?
+    quando eu uso?
+    Como eu uso((treinar e testar)
+    qual métrica mostra a performance?
+        Linear regression
+        decision tree
+        random forest
+        extra trees
+        k-means
+        cluster hierárquico
+        arima
+        k-nearest neighbors
+        logistic regression
+
+================= CURSOS GRATUITOS =================
+https://work.caltech.edu/telecourse
+
+2 mês
+Produção de projetos
+    Questão de negócio
+    Entendimento do negócio
+    coleta de dados
+    limpeza dos dados
+    exploracao dos dados (responder as perguntas)
+    modelagem dos dados (para poder entrar no machine learning)
+    algoritmos de machine learning
+    avaliação do algoritmo
+    modelo em produção
+
+================= CURSOS Produção de Projetos =================
+Data Science Em Produção:
+https://bit.ly/2Zm97Qc
+
+repete a produção de projetos
+    1 de regressão
+    1 de classificaçoã
+    1 de clusterização
+
+    projetos de insights (somente com a análise dos dados (exploração dos dados))
+        levante hipoteses
+    projetos de data engineering
+        pilpeline de dados - estruturar a porra dos dados ETL (banco/api/webscraping)
+    projetos de machine learning 
+        como transformar a performance de ML em performance de negócio (se a acurácia é de 90% qual o retorno em $$ disso)
+    projetos end-to-end -> pública uma api para que outros usam 
+    
+        
+
+Sql 
+    modelos de dados(fato/dimensão, snowflake)
+
+storytelling
+    apresentação dos resultados
+    visualização
+    (power point/google slides/ power bi)
+    apresentação escrita do processo
+    
+
+============================================
+Modelo é a representaçoã de um fenomeno
+    fenomenos em uma empresa:
+    quantas vendas eu vou fazer no mes que vem
+    qual a minha receita no mes que vem
+    quantas reviews ruins vou receber no mes que vem
+    qual vai ser meu custo mesm que vem
+    qual a possibilidade da pessoa cancelar meu curso em uma semana
+    se eu colocar cem/mil reais no google ads quanto eu vou ter de vendas
+
+fórmula analitica
+nos modelos físicos análise e matematica
+na empresa não se consegue encontrar a fórmula exata
+encontra-se uma estimativa(heuristica) a partir dos dados =>aproximação numérica
+
+projeto da Iris flowers (hello wolrd - db padrão para estudo)
+Mnist
+
+3-insights
+1-data engineering
+3 machine learning
+2-end to end
+1 data science
+
+

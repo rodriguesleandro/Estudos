@@ -66,4 +66,10 @@ Cargo.lock
 **/*.rs.bk
 
 #Dev Database
-.db
+*.db
+*.db-shm
+*.db-wal
+
+#imagens
+*.jpg
+*.png

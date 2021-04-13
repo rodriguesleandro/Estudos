@@ -12,7 +12,7 @@ namespace ProEventos.API.Controllers
     [ApiController]
     [Route("api/[controller]")]
 
-    public class EventoController : ControllerBase
+    public class EventosController : ControllerBase
     {
         // private IEnumerable<Evento> _eventos = new Evento[]{
         //     new Evento(){
@@ -33,7 +33,7 @@ namespace ProEventos.API.Controllers
         //         DataEvento = DateTime.Now.AddDays(1).ToString()
         //     }};
         public readonly DataContext _contexto;
-        public EventoController(DataContext context)
+        public EventosController(DataContext context)
         {
             this._contexto = context;
 

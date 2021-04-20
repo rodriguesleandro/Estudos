@@ -48,6 +48,8 @@ namespace ProEventos.API.Controllers
         {
             try
             {
+                await Task.Delay(6000);
+                //throw new Exception("Zoeira Never Ends!");
                 var eventos = await _eventoService.GetAllEventosAsync(true);
                 if(eventos == null) return NotFound("Nenhum Evento Encontrado!");
 

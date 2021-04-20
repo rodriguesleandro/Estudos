@@ -1,5 +1,7 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
 import { Evento } from '../models/Evento';
 import { EventoService } from '../services/evento.service';
 
@@ -14,7 +16,9 @@ export class EventosComponent implements OnInit {
   modalRef!: BsModalRef;
   constructor(
     private eventoService: EventoService,
-    private modalService: BsModalService
+    private modalService: BsModalService,
+    private toastr: ToastrService,
+    private spinner: NgxSpinnerService
     ) { }
 
   public get filtroLista(): string{
@@ -35,7 +39,18 @@ export class EventosComponent implements OnInit {
   private filtroListado = '';
 
   ngOnInit(): void {
+    
+    
     this.getEventos();
+    this.spinner.show();
+
+    
+
+    // setTimeout(() => {
+    //   /** spinner ends after 5 seconds */
+      
+    // }, 3000);
+  
   }
 
   public filtrarEventos(filtrarPor: string): Evento[]{
@@ -56,11 +71,16 @@ export class EventosComponent implements OnInit {
     console.log('Puta que pariu');
     this.eventoService.getEventos().subscribe(
       // tslint:disable-next-line: variable-name
-      (_eventos: Evento[]) => {
+      {
+      next: (_eventos: Evento[]) => {
         this.eventos = _eventos;
         this.eventosFiltrados = this.eventos;
       },
-      error => console.log(error)
+      error: (error: any) => {
+                              this.spinner.hide();
+                            this.toastr.error(error.message, "Fudeu!")},
+      complete: () => this.spinner.hide()
+    }
     );
   }
 
@@ -69,6 +89,7 @@ export class EventosComponent implements OnInit {
   }
 
   confirm(): void {
+    this.toastr.success('Hello world!', 'Toastr fun!');
     this.modalRef.hide();
   }
 

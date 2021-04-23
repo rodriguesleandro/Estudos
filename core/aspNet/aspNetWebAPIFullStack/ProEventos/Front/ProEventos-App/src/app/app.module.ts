@@ -11,9 +11,13 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
-import { EventosComponent } from './eventos/eventos.component';
-import { PalestrantesComponent } from './palestrantes/palestrantes.component';
-import { NavComponent } from './nav/nav.component';
+import { EventosComponent } from './componentes/eventos/eventos.component';
+import { PalestrantesComponent } from './componentes/palestrantes/palestrantes.component';
+import { NavComponent } from './shared/nav/nav.component';
+import { ContatosComponent } from './componentes/contatos/contatos.component';
+import { DashboardComponent } from './componentes/dashboard/dashboard.component';
+import { PerfilComponent } from './componentes/perfil/perfil.component';
+import { TituloComponent } from './shared/titulo/titulo.component';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -29,6 +33,10 @@ import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
     AppComponent,
     EventosComponent,
     PalestrantesComponent,
+    ContatosComponent,
+    DashboardComponent,
+    PerfilComponent,
+    TituloComponent,
     NavComponent,
     DateTimeFormatPipe
    ],
@@ -43,7 +51,7 @@ import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
         positionClass: 'toast-bottom-right',
         preventDuplicates: true,
         progressBar:true
-        
+
       }
     ),
     CollapseModule.forRoot(),

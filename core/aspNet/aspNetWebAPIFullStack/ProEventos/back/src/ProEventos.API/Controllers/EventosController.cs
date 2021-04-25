@@ -43,12 +43,13 @@ namespace ProEventos.API.Controllers
             _eventoService = eventoService;     
         }
 
+        /// <summary>Retorna todos os Eventos.</summary>
         [HttpGet]
         public async Task<IActionResult> Get()
         {
             try
             {
-                await Task.Delay(6000);
+                //await Task.Delay(1000);
                 //throw new Exception("Zoeira Never Ends!");
                 var eventos = await _eventoService.GetAllEventosAsync(true);
                 if(eventos == null) return NotFound("Nenhum Evento Encontrado!");
@@ -125,6 +126,11 @@ namespace ProEventos.API.Controllers
             }
 
         }
+
+        /// <summary>
+        /// Deletes a specific Event.
+        /// </summary>
+        /// <param name="id">Parece óbivio, mas é o Id do Evento mesmo.</param>    
         [HttpDelete]
         public async  Task<IActionResult>  Delete(int id)
         { 

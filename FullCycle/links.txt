@@ -1,0 +1,10 @@
+https://docs.microsoft.com/pt-br/windows/wsl/compare-versions#connecting-via-remote-ip-addresses
+
+https://github.com/codeedu/wsl2-docker-quickstart
+
+
+https://www.freecodecamp.org/news/what-is-open-source-software-explained-in-plain-english/
+
+https://gist.github.com/argentinaluiz/f134417fa4753064820b6ee2af194e55
+
+https://dev.to/erickrock80/pt-br-instalando-oh-my-zsh-no-windows-terminal-3a8l

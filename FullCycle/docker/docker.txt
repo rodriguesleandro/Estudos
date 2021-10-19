@@ -1,0 +1,112 @@
+611fc7830dca970008d19dcc
+https://bigfive-test.com/result/611fc7830dca970008d19dcc
+Placa Mae MSI MPG B550 Gaming Plus DDR4 Socket AM4 Chipset AMD B550
+docker
+
+Conteiner 
+->padrão de unidade de software
+empacota código e todas suas dependencias
+executada rapidamente, de forma confiavel
+de um ambiente computacional p/ outro.
+
+->processo do SO com seus filhos baseado em Namespaces
+
+CGroups
+Isola os recursos computacionais do processo
+
+File System
+OFS - Overlay File System
+Me parece um snapshot/grafo do git
+	caso eu baixe o ubuntu
+	Depois baixe outra imagem que use uma "layer" que já esta na imagem do ubuntu.
+		ela não será baixada.
+
+Imagens - 
+conjunto camadas de dependencias
+reutilizaveis
+Imutável, mas possui uma camada de escrita
+
+dockerfile
+descreve a imagem
+FROM:Imagem baseado
+RUN: Comandos
+EXPOSE: expor portas
+
+Image Registry
+Repositório de imagens
+
+Volumes
+pastas compartilhadas.
+----
+WSL->Windows subsystem for linux
+--
+Docker ps lista conatineres que estão rodando
+	-a lista os containeres que foram executados
+	-a -q só os ids dos containeres
+
+docker run nomeImagem:versao
+	sem :versao -> nomeImagem  ele assume :latest
+	
+		pull nomeImagem apenas baixa a imagem
+
+docker run -it
+           -i interativo - mantem o processo ativo pra vc interagir
+		   -t tty para poder digitar coisas no terminal(rodar comandos)
+		   
+		   --rm remove o container da lista dos que foram executados (ps -a)
+				rm $(docker ps -a -q) -f
+		   
+		   -p 8080:80 -> direciona a porta 8080 da máquina que está rodando p dcker Cli para a porta 80 do container.
+		   
+		   -d (deatached) para não travar o terminal enquanto executa o container
+		***bind mount   
+		   -v pahtPastaOrigemHost:pathPastaDestinoContainer monta a pasta dentro do container (desta forma se o cantainer for removido o conteudo se mantem(está no host))
+		   
+		   --mount type=bind,source="$(pwd)"/,target=
+				
+				Se a pasta origem não existir
+					-v cria a pasta na origem
+					--mount gera um erro
+		***   
+		stop [container id/name] para a execução do container
+		start [container id/name] inicia um container (que já esteja na máquina)
+		rm [container id/name] remove o container (a imagem continua)
+			se estiver rodando exibe erro recomendando a parada (stop) ou forçar a remoção rm [container id/name] -f
+		--name para definir um nome para o container
+
+Volumes		
+	"diretórios virtuais" que podem ser compartilhados (montados) em mais de um container 
+---
+docker images lista imagens baixadas
+		rmi apaga a imagem
+
+		push sobe a imagem para o dockerhub
+		
+DOCKERFILE
+
+FROM:Imagem baseado
+RUN: Comandos
+EXPOSE: expor portas
+USER seta usuario logado ao iniciar a imagem (default é root)
+COPY html/ /usr/share/nginx/html
+     origem destino
+
+ENV set variaveis de ambiente
+
+WORKDIR /app
+		vai criar a pasta e "colocar" vc (prompt) nesta pasta
+	
+CMD ["echo", "hello world"]
+		executa o comando .
+			caso vc passe o cmd durante o docer run ele substituira o valor CMD
+	
+ENTRYPOINT	["echo", "hello world"]
+		Comando fixo
+		CMD funciona como parametro para o entrypoit
+ 
+	build cria uma imagem
+		-t tag nome da imagem userDockerHub/nomeimg:versao
+		. criar na pasta atual
+	
+	
+	

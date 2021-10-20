@@ -80,12 +80,18 @@ public class RestUtils {
 		response = given()
 				.relaxedHTTPSValidation()
                 .body(body)
+				.contentType(ContentType.JSON)
                 .headers(header)
 				.post(endpoint)
 				.then()
 				.extract()
 				.response();
 	}
+
+	public static int getStatusCode()
+	{
+		return response.getStatusCode();
+	}
 }
-//1h11 aula 5
+//1h22 - aula 6 classe
 

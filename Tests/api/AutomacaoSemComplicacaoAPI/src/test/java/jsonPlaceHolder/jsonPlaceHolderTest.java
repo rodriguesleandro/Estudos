@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import utils.RestUtils;
 import Entidades.*;
+import massas.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -92,6 +93,24 @@ public class jsonPlaceHolderTest {
     }
 
     @Test
+    public void executaLoginClasseMassa()
+    {
+        Login jsonClasse = JsonPlaceHolderMassa.login;
+        
+
+        RestUtils.setBaseUri("https://jsonplaceholder.typicode.com/");
+            String endpoint = "posts";
+        
+         RestUtils.postRequest(endpoint, jsonClasse);
+
+         assertEquals(201, RestUtils.getStatusCode());
+
+        token = "Bearer " + RestUtils.getResponse("token");
+        //executaPostLogado();
+    }
+
+
+    @Test
     public void executaPostLogado()
     {
         RestUtils.setBaseUri("https://jsonplaceholder.typicode.com/");
@@ -140,3 +159,4 @@ https://jsonplaceholder.typicode.com/posts
 
 {538692fe-40a7-4359-9048-a5eaacfa4c44}
  */
+//aula 8 18m

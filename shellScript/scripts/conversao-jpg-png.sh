@@ -1,3 +1,8 @@
 #!/bin/bash
 
-convert ~/Downloads/imagens-livros/$1.jpg ~/Downloads/imagens-livros/$1.png
+PATH_IMAGENS=~/Downloads/imagens-livros
+
+for imagem in $@
+do
+    convert $PATH_IMAGENS/$imagem.jpg $PATH_IMAGENS/$imagem.png
+done

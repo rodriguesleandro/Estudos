@@ -1,8 +1,14 @@
 #!/bin/bash
 
-PATH_IMAGENS=~/Downloads/imagens-livros
+cd ~/Downloads/imagens-livros
 
-for imagem in $@
+if [ ! -d png ]
+then
+    mkdir png
+fi
+
+for imagem in *.jpg
 do
-    convert $PATH_IMAGENS/$imagem.jpg $PATH_IMAGENS/$imagem.png
+    imagem_sem_extensao=$(ls $imagem | awk -F. '{ print $1 }')
+    convert $imagem_sem_extensao.jpg png/$imagem_sem_extensao.png
 done
